@@ -1,0 +1,80 @@
+﻿@model IEnumerable<PentonixAssesment.Models.AssignedTask>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    body {
+        background: url('../../Imgs/dashboard_background.jpg');
+        color:white;
+    }
+    </style >
+    <h2 > Assigned Tasks</h2 >
+
+    <p >
+    @Html.ActionLink("Assign  New Task", "Create")
+    </p >
+
+
+    <table class="table table-bordered table-hover" id="myTable" >
+
+    <thead >
+
+    <tr >
+    <th >
+    @Html.DisplayNameFor(model => model.Name)
+    </th >
+    <th >
+    @Html.DisplayNameFor(model => model.Task)
+    </th >
+    <th >
+    @Html.DisplayNameFor(model => model.PlannedEffort)
+    </th >
+    <th >
+    @Html.DisplayNameFor(model => model.Status)
+    </th >
+    <th >
+    @Html.DisplayNameFor(model => model.Date)
+    </th >
+
+    </tr >
+    </thead >
+
+
+
+    <tbody >
+    @foreach (var item in Model)
+        {
+             <tr >
+    
+                     <td >
+    @Html.DisplayFor(modelItem => item.Name)
+    </td >
+                     <td >
+    @Html.DisplayFor(modelItem => item.Task)
+    </td >
+                     <td >
+    @Html.DisplayFor(modelItem => item.PlannedEffort)
+    </td >
+                     <td >
+    @Html.DisplayFor(modelItem => item.Status)
+    </td >
+                     <td >
+    @Html.DisplayFor(modelItem => item.Date)
+    </td >
+                     <td >
+    @Html.ActionLink("Edit", "Edit", new { id = item.TicketNo }) |
+    @Html.ActionLink("Delete", "Delete", new { id = item.TicketNo })
+    </td >
+               
+    </tr >
+        }
+    <tbody >
+    </table >
+    @section Scripts {
+    <script type="text/javascript" > <
+    $(document).ready(function () {
+                $('#myTable').DataTable();
+            });
+    </script >
+}

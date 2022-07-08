@@ -1,0 +1,200 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem;
+}
+
+body {
+    overflow: scroll;
+   background-color:black;
+    background-size: cover;
+    font-weight: 500;
+    height: 100vh;
+ 
+    font-family: 'Roboto', sans-serif;
+}
+
+h5 {
+    font-size: 30px;
+}
+
+.card {
+    margin-top: -17%;
+    width: 400px;
+    height: fit-content;
+    padding-bottom: 2%;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.card-signin {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+    .card-signin .card-title {
+        margin-bottom: 2rem;
+        font-weight: 300%;
+        font-size: 1.5rem;
+    }
+
+    .card-signin .card-body {
+        padding: 2rem;
+    }
+
+.form-signin {
+    width: 100%;
+}
+
+    .form-signin .btn {
+        border-radius: 5rem;
+        letter-spacing: .1rem;
+        font-weight: bold;
+        padding: 1rem;
+        transition: all 0.2s;
+        color: #515A5A;
+    }
+
+.control-label {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+    .control-label{
+        height: auto;
+    }
+
+    .form-label-group > input,
+    .form-label-group > label {
+        padding: var(--input-padding-y) var(--input-padding-x);
+    }
+
+    .form-group > control-label {
+        position: absolute;
+        align-content: start;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        margin-bottom: 0;
+        /* Override default `<label>` margin */
+        line-height: 1.5;
+        color: #515A5A;
+        transition: all .1s ease-in-out;
+        border-left: solid 4px;
+        font-size: 15px;
+    }
+
+
+
+.control-label input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.control-label input:-ms-input-placeholder {
+    color: transparent;
+}
+
+.control-label input::-ms-input-placeholder {
+    color: transparent;
+}
+
+.control-label input::-moz-placeholder {
+    color: transparent;
+}
+
+.control-label input::placeholder {
+    color: transparent;
+}
+
+.control-label input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+    .control-label input:not(:placeholder-shown) ~ label {
+        padding-top: calc(var(--input-padding-y) / 3);
+        padding-bottom: calc(var(--input-padding-y) / 3);
+        font-size: 12px;
+        color: #D1D1D1;
+        height: 50px;
+    }
+
+.submit {
+    background: white;
+    color:black;
+    font-size: 100%;
+   width:50%;
+    height: 50px;
+}
+
+.card-body {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    border: solid 2px;
+    padding-left: 5%;
+    border-radius: 20px;
+}
+
+a {
+    color: #515A5A;
+}
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+    .form-label-group > label {
+        display: none;
+    }
+
+    .form-label-group input::-ms-input-placeholder {
+        color: #777;
+    }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .form-label-group > label {
+        display: none;
+    }
+
+    .form-label-group input:-ms-input-placeholder {
+        color: #777;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .card-holder {
+        grid-template-columns: 1fr 6fr 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+.form-label-group input {
+    height: auto;
+    width: 100%;
+}
+
+.form-grp {
+    padding: 0 20px;
+}
+
+
+
+.p-5 {
+    padding: 1rem !important;
+}
+}

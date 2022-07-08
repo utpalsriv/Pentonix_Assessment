@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "SuccessfulLogin";
+}
+<style>
+    body {
+        background: url('../../Imgs/dashboard_background.jpg');
+    }
+    .assigned {
+        margin: 20px;
+        width: 150px;
+        height: 150px;
+        background-color: orange;
+        align-content: center;
+        justify-content: center;
+    }
+
+        .assigned img {
+            margin-top: 10px;
+        }
+
+    .user {
+        margin: 20px;
+        width: 150px;
+        height: 150px;
+        background-color: cornflowerblue;
+        align-content: center;
+        justify-content: center;
+    }
+
+        .user img {
+            margin-top: 10px;
+        }
+</style>
+<h2>
+    Hello @ViewBag.Name;
+</h2>
+<div class="row" style="display:flex">
+    <div class="assigned text-center">
+        <img src="~/Imgs/tasks.png" />
+        <br />
+        @Html.ActionLink("Today's Assigned", "Index", "AssignedTasks")
+    </div>
+
+    <div class="user text-center">
+
+        <img src="~/Imgs/assigned_task.png" />
+        <br />
+        @Html.ActionLink("Assigned", "Index", "AssignedTasks")
+    </div>
+</div>
+
+
