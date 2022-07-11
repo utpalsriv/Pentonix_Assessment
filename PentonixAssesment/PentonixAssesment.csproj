@@ -133,6 +133,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\TodayTasksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -268,6 +269,12 @@
     <Content Include="Views\AssignedTasks\Details.cshtml" />
     <Content Include="Views\AssignedTasks\Edit.cshtml" />
     <Content Include="Views\AssignedTasks\Index.cshtml" />
+    <Content Include="Views\AssignedTasks\TodaysAssigned.cshtml" />
+    <Content Include="Views\TodayTasks\Create.cshtml" />
+    <Content Include="Views\TodayTasks\Delete.cshtml" />
+    <Content Include="Views\TodayTasks\Details.cshtml" />
+    <Content Include="Views\TodayTasks\Edit.cshtml" />
+    <Content Include="Views\TodayTasks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\UserDashBoard\" />

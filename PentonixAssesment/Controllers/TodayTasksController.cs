@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.Entity;
-using System.Data.SqlClient;
-using System.Dynamic;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -13,18 +10,17 @@ using PentonixAssesment.Models;
 
 namespace PentonixAssesment.Controllers
 {
-    public class AssignedTasksController : Controller
+    public class TodayTasksController : Controller
     {
         private DB_tasks db = new DB_tasks();
-        private DB_Entities _db = new DB_Entities();
 
-        // GET: AssignedTasks
+        // GET: TodayTasks
         public ActionResult Index()
         {
             return View(db.AssignedTask.ToList());
         }
 
-        // GET: AssignedTasks/Details/5
+        // GET: TodayTasks/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -39,37 +35,13 @@ namespace PentonixAssesment.Controllers
             return View(assignedTask);
         }
 
-        // GET: AssignedTasks/Create
+        // GET: TodayTasks/Create
         public ActionResult Create()
         {
-            dynamic dy = new ExpandoObject();
-            var Fname = _db.Registration.ToList();
-            List<string> countryrlist = new List<string>();
-            foreach (var s in Fname)
-            {
-                countryrlist.Add(s.FirstName);
-            }
-
-            ViewBag.NameList = new SelectList(countryrlist, "Name");
-
-
             return View();
         }
 
-        public ActionResult GetName()
-        {
-            
-            var Fname = _db.Registration.ToList();
-            List<string> countryrlist = new List<string>();
-            foreach (var s in Fname)
-            {
-                countryrlist.Add(s.FirstName);
-            }
-
-
-            return View(countryrlist);
-        }
-        // POST: AssignedTasks/Create
+        // POST: TodayTasks/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -86,7 +58,7 @@ namespace PentonixAssesment.Controllers
             return View(assignedTask);
         }
 
-        // GET: AssignedTasks/Edit/5
+        // GET: TodayTasks/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -101,7 +73,7 @@ namespace PentonixAssesment.Controllers
             return View(assignedTask);
         }
 
-        // POST: AssignedTasks/Edit/5
+        // POST: TodayTasks/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -117,7 +89,7 @@ namespace PentonixAssesment.Controllers
             return View(assignedTask);
         }
 
-        // GET: AssignedTasks/Delete/5
+        // GET: TodayTasks/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -132,7 +104,7 @@ namespace PentonixAssesment.Controllers
             return View(assignedTask);
         }
 
-        // POST: AssignedTasks/Delete/5
+        // POST: TodayTasks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
@@ -151,27 +123,5 @@ namespace PentonixAssesment.Controllers
             }
             base.Dispose(disposing);
         }
-        
-        [NonAction]
-        public SelectList ToSelectList(DataTable table, string valueField, string textField)
-        {
-            List<SelectListItem> list = new List<SelectListItem>();
-
-            foreach (DataRow row in table.Rows)
-            {
-                list.Add(new SelectListItem()
-                {
-                    Text = row[textField].ToString(),
-                    Value = row[valueField].ToString()
-                });
-            }
-
-            return new SelectList(list, "Value", "Text");
-        }
-        public ActionResult TodaysAssigned()
-        {
-            return View(db.AssignedTask.ToList());
-        }
-
     }
 }
